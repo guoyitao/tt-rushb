@@ -1,5 +1,5 @@
 # tt-rushb
-This is a learning project！
+A lightweight Web development framework with IOC, AOP,ORM
 
 ### how to run
 look module tt-example
