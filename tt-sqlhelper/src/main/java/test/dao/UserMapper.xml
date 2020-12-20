@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapper namespace="test.dao.UserMapper">
+
+    <select id="getUser" resultType="test.bean.User" parameterType="java.lang.String">
+        select * from user where id = #{id}
+    </select>
+
+    <select id="getAll" resultType="test.bean.User">
+        select * from user
+    </select>
+
+    <update id="updateUser" parameterType="test.bean.User">
+        update user set name = #{name} where id = #{id}
+    </update>
+
+    <update id="deleteUser">
+        delete from user where id = #{id}
+    </update>
+
+    <update id="addUser" parameterType="test.bean.User">
+        INSERT INTO `user`
+        (`id`,
+        `name`
+        )
+        VALUES
+        ('#{id}',
+        '#{name}'
+        );
+    </update>
+
+</mapper>
