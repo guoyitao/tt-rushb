@@ -19,22 +19,22 @@ public class TestMain {
 
         SqlSession sqlSession = factory.openSession();
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-//        getAllUser(mapper);
-//        getOneUser(mapper);
+        getAllUser(mapper);
+        getOneUser(mapper);
 
-//        User user = new User();
-//        user.setId("4");
-//        user.setName("fuckABC");
-//        updateUser(mapper,user);
+        User user = new User();
+        user.setId("1");
+        user.setName("fuckABC");
+        updateUser(mapper,user);
 
-//        User user = new User();
-//        user.setId("11213123");
-//        user.setName("fuckABC");
-//        int i = mapper.addUser(user);
-//        System.out.println(i);
+//        User user2 = new User();
+//        user2.setId("123");
+//        user2.setName("fuckABC123");
+//        int i = mapper.addUser(user2);
+//        System.out.println("add:" +i);
 
-        int i = mapper.deleteUser("2");
-        System.out.println(i);
+        int i2 = mapper.deleteUser("123");
+        System.out.println("del:" +i2);
     }
 
     private static void updateUser(UserMapper mapper,User user) {
@@ -44,7 +44,7 @@ public class TestMain {
     }
 
     private static void getOneUser(UserMapper mapper) {
-        User user = mapper.getUser("4");
+        User user = mapper.getUser("1");
         System.out.println(user);
     }
 

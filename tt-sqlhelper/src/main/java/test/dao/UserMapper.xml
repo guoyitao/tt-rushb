@@ -13,9 +13,9 @@
         update user set name = #{name} where id = #{id}
     </update>
 
-    <update id="deleteUser">
+    <delete id="deleteUser" parameterType="java.lang.String">
         delete from user where id = #{id}
-    </update>
+    </delete>
 
     <update id="addUser" parameterType="test.bean.User">
         INSERT INTO `user`
@@ -23,8 +23,8 @@
         `name`
         )
         VALUES
-        ('#{id}',
-        '#{name}'
+        (#{id},
+        #{name}
         );
     </update>
 
