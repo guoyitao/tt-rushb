@@ -37,6 +37,13 @@ public class MyAction {
 		String result = queryService.query(name);
 		return out(response,result);
 	}
+
+	@RequestMapping("/queryByOne")
+	public ModelAndView queryByOne(HttpServletRequest request, HttpServletResponse response,
+							  @RequestParam("queryByOne") String name){
+		String result = queryService.query(name);
+		return out(response,result);
+	}
 	
 	@RequestMapping("/add*.json")
 	public ModelAndView add(HttpServletRequest request,HttpServletResponse response,
